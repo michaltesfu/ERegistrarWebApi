@@ -28,10 +28,9 @@ public class StudentServiceImpl implements StudentService{
     @Override
     public List<StudentResponse> findAllStudent() {
         List<Student> students =  studentRepository.findAll();
-        return students
-                .stream()
-                .map(s -> modelMapper.map(s, StudentResponse.class))
-                .collect(Collectors.toList());
+        return students.stream()
+                       .map(s -> modelMapper.map(s, StudentResponse.class))
+                       .collect(Collectors.toList());
     }
 
     @Override
